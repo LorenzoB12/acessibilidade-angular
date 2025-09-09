@@ -3,15 +3,20 @@
     <label for="campoBusca">Que livro você procura?</label>
     <div class="input-wrapper">
       <input
+        #campoBuscaElement
         type="search"
         id="campoBusca"
-        [formControl]="campoBusca"        >
-        <img class="lupa" src="assets/imagens/icone-busca.png" alt="Lupa roxa">
+        [formControl]="campoBusca"
+        aria-label="Campo de pesquisa de livros"
+      >
+        <img class="lupa" src="assets/imagens/icone-busca.png" alt="Lupa roxa" aria-label="Imagem de lupa para pesquisa">
     </div>
   </form>
   <p>Busque por assunto, autoria, nome...</p>
   @if (mensagemErro) {
     <section
+      role="alert"
+      aria-label="Mensagem de erro"
       class="resultados mensagem-erro">
         {{ mensagemErro }}
     </section>
@@ -36,7 +41,9 @@
       <img
         class="ilustracao"
         src="assets/imagens/ilustracao-estante.png"
-        alt="Ilustração de uma pessoa em pé ao lado de uma estante com livros e plantas">
+        alt="Ilustração de uma pessoa em pé ao lado de uma estante com livros e plantas"
+        aria-label="Ilustração de uma pessoa em pé ao lado de uma estante com livros e plantas"
+      >
     </section>
   }
 </section>
